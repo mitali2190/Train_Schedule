@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+                <div class="item active">
+                    <img src="https://www.strasburgrailroad.com/wp-content/gallery/dowt/Percy-train-6-24-2015-5b.jpg" class="tales" alt="Los Angeles" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3 class="c1">“I never ran my train off the track, and I never lost a passenger.” – Harriet Tubman</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="http://minnesotasnewcountry.com/files/2016/12/holiday-train-3.jpg" alt="Chicago" style="width:100%;" class="tales">
+                    <div class="carousel-caption">
+                        <h3 class="c1">“Sometimes you’re the train, sometimes you’re the track.” –Luke Bryan</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="http://www.wallcoo.net/paint/art_train_journeys_Howard%20Fogg/images/Howard_Fogg_Art_Train_Painting_SHHC001(1).jpg" alt="New York" style="width:100%;" class="tales">
+                    <div class="carousel-caption">
+                        <h3 class="c1">Life is like a train track, full of possibilities and happiness.</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="jumbotron new-train">
+                    <div class="row">
+                        <h2>Add Train</h2>
+
+                        <label class="pull-left">Train Name</label>
+                        <input type="text" id="train_name" class="form-control" />
+                        <label class="pull-left">Destination</label>
+                        <input type="text" id="dest" class="form-control" />
+
+                        <label class="pull-left">First Train Time (HH:MM)</label>
+                        <input type="time" id="train_time" class="form-control" />
+
+                        <label class="pull-left">Frequency (min)</label>
+                        <input type="number" id="freq" class="form-control" />
+
+                        <button id="add_train" class="btn sub">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="jumbotron col-md-8 train-detail">
+                <h2>Train Details</h2>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="train_details"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
